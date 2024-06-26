@@ -16,19 +16,19 @@ Open your ~/.zshrc file with a text editor (e.g., nano, vim):
 nano ~/.zshrc
 ```
 
-Add the following alias to define the SSH command with customized values for ```&lt;hostname&gt;``` and ```&lt;ip-address&gt;```:
+Add the following alias to define the SSH command with customized values for ```<hostname>``` and ```<ip-address>```:
 ```sh
 # Alias for SSH access to a specific host
-alias sshhost1='ssh -o StrictHostKeyChecking=False -i ~/.ssh/da/demo_ed25519 &lt;hostname&gt;@&lt;ip-address&gt;'
+alias sshhost1='ssh -o StrictHostKeyChecking=False -i ~/.ssh/da/demo_ed25519 <hostname>@<ip-address>'
 ```
 
-Replace ```&lt;hostname&gt;``` with the actual hostname of your server and ```&lt;ip-address&gt;``` with the actual IP address.
+Replace ```<hostname>``` with the actual hostname of your server and ```<ip-address>``` with the actual IP address.
 
 Adding Zsh Completions to Zsh Configuration:
 
 Add the following lines to your ~/.zshrc file to enable Zsh Completions:
 ```sh
-if type brew &amp;&gt;/dev/null; then
+if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
     autoload -Uz compinit
@@ -41,7 +41,7 @@ Ensure Angular CLI completion script is loaded correctly:
 The issue might be related to the Angular CLI completion script. Try including the completion script in your ~/.zshrc file after initializing compinit:
 ```sh
 # Zsh Completions
-if type brew &amp;&gt;/dev/null; then
+if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
     autoload -Uz compinit
@@ -49,8 +49,8 @@ if type brew &amp;&gt;/dev/null; then
 fi
 
 # Load Angular CLI autocompletion
-if [ -f &lt;(ng completion script) ]; then
-    source &lt;(ng completion script)
+if [ -f <(ng completion script) ]; then
+    source <(ng completion script)
 fi
 ```
 
